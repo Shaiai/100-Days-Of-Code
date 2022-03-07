@@ -1,0 +1,1 @@
+quiz.score}/{len(question_bank)}")

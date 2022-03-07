@@ -1,0 +1,23 @@
+class Animal:
+    def __init__(self):
+        self.num_eyes = 2
+
+    def breathe(self):
+        print("Inhale, exhale.")
+
+#Pass the class to inheret from in the arguments for class defintiion.
+class Fish(Animal):
+    def __init__(self):
+        #This super() call references the class you are pulling the initializer from and assigning all same attributes and methods to this class.
+        super().__init__()
+
+    def breathe(self):
+        #Calls the initial classes method to breathe and then modifies it to say something else as well.
+        super().breathe()
+        print("doing this underwater.")
+
+    def swim(self):
+        print("moving in water.")
+
+nemo = Fish()
+nemo.breathe()
