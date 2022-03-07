@@ -26,7 +26,7 @@ while len(guessed_states) < 50:
             if state not in guessed_states:
                 missing_states.append(state)
         #Turn the unguessed states into a table dataframe for export.
-        new_data = pandas.DataFrame(missing_states)
+        new_data = pandas.DataFrame(missing_states, columns = ['Missed'])
         #Export the newly created table to the designated folder/directory.
         new_data.to_csv("Day25\\us-states-game-start\\To_Study.csv")
 
