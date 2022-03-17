@@ -21,10 +21,11 @@ while len(guessed_states) < 50:
                                     prompt="What's another state's name?").title()
     #Check if the user wants to end the game.
     if answer_state == 'Exit':
-        missing_states = []
+        missing_states = [state for state in all_states if state not in guessed_states]
+        '''missing_states = []
         for state in all_states:
             if state not in guessed_states:
-                missing_states.append(state)
+                missing_states.append(state)'''
         #Turn the unguessed states into a table dataframe for export.
         new_data = pandas.DataFrame(missing_states, columns = ['Missed'])
         #Export the newly created table to the designated folder/directory.
